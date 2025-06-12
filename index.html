@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="logo.png" />
+</head>
+<body>
+  <header>
+    <div class="left-header">
+      <img src="assets/logounila.png" alt="Logo" class="logo" />
+      <span class="judul">Universitas Lampung</span>
+    </div>
+    <nav class="navbar">
+      <a href="index.html">Home</a>
+      <a href="profile.html">Profile</a>
+      <a href="project.html">Task</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1 class="reveal-text">halloww 𐙚 </h1>
+    </section>
+  </main>
+    ...
+  <footer>
+    <p>&copy; 2025 Lugita Sandika Prameswari. Computer Science. University Of Lampung.</p>
+  </footer>
+
+  <script>
+    const slideContainer = document.querySelector(".carousel-slide");
+    const slides = document.querySelectorAll(".carousel-slide img");
+    const prevBtn = document.querySelector(".prev");
+    const nextBtn = document.querySelector(".next");
+
+    let currentIndex = 0;
+
+    function updateSlide() {
+      const slideWidth = slides[0].clientWidth;
+      slideContainer.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+
+    }
+
+    nextBtn.addEventListener("click", () => {
+      currentIndex = (currentIndex + 1) % slides.length;
+      updateSlide();
+    });
+
+    prevBtn.addEventListener("click", () => {
+      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+      updateSlide();
+    });
+
+    window.addEventListener("resize", updateSlide);
+    updateSlide();
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Profile - Portofolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="left-header">
+      <img src="assets/lov lov.png" class="logo" alt="Logo Unila" />
+      <span class="judul">with love, 𝓛𖥔 ࣪</span>
+    </div>
+    <nav class="navbar">
+      <a href="index.html">Home</a>
+      <a href="profile.html">Profile</a>
+      <a href="project.html">Task</a>
+    </nav>
+  </header>
+
+  <main class="profile-main">
+    <div class="profile-box">
+      <div class="carousel-container">
+        <div class="carousel-slide">
+          <img src="assets/llugita.jpeg" alt="Foto 1" class="profile-photo" />
+          <img src="assets/profill.jpeg" alt="Foto 2" class="profile-photo" />
+          <img src="assets/hitamm.jpeg" alt="Foto 3" class="profile-photo" />
+        </div>
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+      </div>
+      <h2>Lugita Sandika Prameswari</h2>
+      <p>2217051119</p>
+      <p>CD</p>
+    </div>
+    
+
+    <section>
+      <h2>Profil Saya</h2>
+      <p>
+        Saya adalah mahasiswa Ilmu Komputer Universitas Lampung yang sedang menempuh mata kuliah Grafika Komputer. Portofolio ini dibuat sebagai bagian dari dokumentasi tugas dan kuis selama perkuliahan. 
+      </p>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 Lugita Sandika Prameswari. Computer Science. University Of Lampung.</p>
+  </footer>
+  <script>
+    const slide = document.querySelector('.carousel-slide');
+    const images = document.querySelectorAll('.carousel-slide img');
+    const prevBtn = document.querySelector('.prev');
+    const nextBtn = document.querySelector('.next');
+  
+    let counter = 0;
+    const size = 200; // lebar 1 foto
+  
+    nextBtn.addEventListener('click', () => {
+      if (counter < images.length - 1) {
+        counter++;
+        slide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+      }
+    });
+  
+    prevBtn.addEventListener('click', () => {
+      if (counter > 0) {
+        counter--;
+        slide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+      }
+    });
+  </script>
+  
+</body>
+</html>
